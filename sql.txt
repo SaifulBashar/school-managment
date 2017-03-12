@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 12, 2017 at 08:20 AM
+-- Generation Time: Mar 12, 2017 at 06:00 PM
 -- Server version: 5.6.28
 -- PHP Version: 7.0.10
 
@@ -34,16 +34,17 @@ CREATE TABLE `bengali_result` (
 --
 
 CREATE TABLE `class_1` (
-  `english_teacher` int(11) NOT NULL,
-  `bengali_teacher` int(11) NOT NULL
+  `subject` varchar(20) NOT NULL,
+  `teacher` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `class_1`
 --
 
-INSERT INTO `class_1` (`english_teacher`, `bengali_teacher`) VALUES
-(1, 1);
+INSERT INTO `class_1` (`subject`, `teacher`) VALUES
+('english', 'kk'),
+('bengali', 'll');
 
 -- --------------------------------------------------------
 
@@ -52,9 +53,16 @@ INSERT INTO `class_1` (`english_teacher`, `bengali_teacher`) VALUES
 --
 
 CREATE TABLE `class_2` (
-  `english_teacher` int(11) NOT NULL,
-  `bengali_teacher` int(11) NOT NULL
+  `subject` varchar(20) NOT NULL,
+  `teacher` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `class_2`
+--
+
+INSERT INTO `class_2` (`subject`, `teacher`) VALUES
+('math', 'll');
 
 -- --------------------------------------------------------
 
@@ -110,7 +118,10 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`id`, `name`, `guardian`, `mobile`, `address`, `class`) VALUES
-(1, 'g', 'hh', 98, 'ggg', 1);
+(1, 'g', 'hh', 98, 'ggg', 1),
+(2, 'ee', 'ww', 4545, 'eeee', 2),
+(3, 'ee', 'ww', 4545, 'eeee', 2),
+(4, 'n', 'h', 4555, 'dsddd', 2);
 
 -- --------------------------------------------------------
 
@@ -141,20 +152,6 @@ INSERT INTO `teacher` (`id`, `name`) VALUES
 ALTER TABLE `bengali_result`
   ADD PRIMARY KEY (`student_id`,`teacher_id`),
   ADD KEY `teacher_id` (`teacher_id`);
-
---
--- Indexes for table `class_1`
---
-ALTER TABLE `class_1`
-  ADD PRIMARY KEY (`english_teacher`,`bengali_teacher`),
-  ADD KEY `bengali_teacher` (`bengali_teacher`);
-
---
--- Indexes for table `class_2`
---
-ALTER TABLE `class_2`
-  ADD PRIMARY KEY (`english_teacher`,`bengali_teacher`),
-  ADD KEY `bengali_teacher` (`bengali_teacher`);
 
 --
 -- Indexes for table `english_result`
@@ -194,7 +191,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `teacher`
 --
@@ -210,20 +207,6 @@ ALTER TABLE `teacher`
 ALTER TABLE `bengali_result`
   ADD CONSTRAINT `bengali_result_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`),
   ADD CONSTRAINT `bengali_result_ibfk_2` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`);
-
---
--- Constraints for table `class_1`
---
-ALTER TABLE `class_1`
-  ADD CONSTRAINT `class_1_ibfk_1` FOREIGN KEY (`english_teacher`) REFERENCES `teacher` (`id`),
-  ADD CONSTRAINT `class_1_ibfk_2` FOREIGN KEY (`bengali_teacher`) REFERENCES `teacher` (`id`);
-
---
--- Constraints for table `class_2`
---
-ALTER TABLE `class_2`
-  ADD CONSTRAINT `class_2_ibfk_1` FOREIGN KEY (`english_teacher`) REFERENCES `teacher` (`id`),
-  ADD CONSTRAINT `class_2_ibfk_2` FOREIGN KEY (`bengali_teacher`) REFERENCES `teacher` (`id`);
 
 --
 -- Constraints for table `english_result`

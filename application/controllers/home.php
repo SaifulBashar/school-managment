@@ -20,5 +20,20 @@ class Home extends CI_Controller {
             $this->addStudentModel->addStudent($name,$guardianName,$mobile,$address,$class);
         }
     }
+    public function getSubject(){
+        $cl = $this->input->get("cl");
+
+        $this->load->model('classSubModel');
+        $arr = $this->classSubModel->getSub($cl);
+        //echo $arr;
+        echo json_encode($arr);
+    }
+    public function getteacher(){
+
+        $this->load->model('classSubModel');
+        $arr = $this->classSubModel->getteacher();
+        //echo $arr;
+        echo json_encode($arr);
+    }
 
 }
