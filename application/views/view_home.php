@@ -39,17 +39,18 @@
                 <form method="post">
                     <label>Name</label><br><br>
                     <input name="name" type="text"/><br><br>
-                    <label>Gurdian name </label><br><br>
-                    <input name="gurdianName" type="text"/><br><br>
+                    <label>Guardian name </label><br><br>
+                    <input name="guardianName" type="text"/><br><br>
+                    <label>Mobile</label><br><br>
+                    <input name="mobile" type="text"/><br><br>
                     <label>Address</label><br><br>
                     <input name="address" type="text"/><br><br>
                     <label>Enroll class</label><br><br>
-                    <select>
+                    <select name="class">
 
-                        <option value="one">One</option>
-                        <option value="two">Two</option>
-                        <option value="three">Four</option>
-                        <option value="four">Five</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        
                     </select>
                     <br><br>
                     <br><br>
