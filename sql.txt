@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 12, 2017 at 06:00 PM
+-- Generation Time: Mar 15, 2017 at 02:51 PM
 -- Server version: 5.6.28
 -- PHP Version: 7.0.10
 
@@ -34,17 +34,16 @@ CREATE TABLE `bengali_result` (
 --
 
 CREATE TABLE `class_1` (
-  `subject` varchar(20) NOT NULL,
-  `teacher` varchar(20) NOT NULL
+  `english` varchar(20) NOT NULL,
+  `bengali` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `class_1`
 --
 
-INSERT INTO `class_1` (`subject`, `teacher`) VALUES
-('english', 'kk'),
-('bengali', 'll');
+INSERT INTO `class_1` (`english`, `bengali`) VALUES
+('kk', 'ii');
 
 -- --------------------------------------------------------
 
@@ -53,16 +52,16 @@ INSERT INTO `class_1` (`subject`, `teacher`) VALUES
 --
 
 CREATE TABLE `class_2` (
-  `subject` varchar(20) NOT NULL,
-  `teacher` varchar(20) NOT NULL
+  `english` varchar(20) NOT NULL,
+  `bengali` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `class_2`
 --
 
-INSERT INTO `class_2` (`subject`, `teacher`) VALUES
-('math', 'll');
+INSERT INTO `class_2` (`english`, `bengali`) VALUES
+('ll', 'ii');
 
 -- --------------------------------------------------------
 
@@ -140,7 +139,8 @@ CREATE TABLE `teacher` (
 
 INSERT INTO `teacher` (`id`, `name`) VALUES
 (1, 'kk'),
-(2, 'll');
+(2, 'll'),
+(3, 'ii');
 
 --
 -- Indexes for dumped tables
@@ -196,7 +196,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
