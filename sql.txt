@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 15, 2017 at 02:51 PM
+-- Generation Time: Mar 15, 2017 at 06:22 PM
 -- Server version: 5.6.28
 -- PHP Version: 7.0.10
 
@@ -27,6 +27,15 @@ CREATE TABLE `bengali_result` (
   `teacher_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `bengali_result`
+--
+
+INSERT INTO `bengali_result` (`student_id`, `result`, `grade`, `teacher_id`) VALUES
+(22, 0, '', 1),
+(23, 0, '', 1),
+(24, 0, '', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -43,7 +52,7 @@ CREATE TABLE `class_1` (
 --
 
 INSERT INTO `class_1` (`english`, `bengali`) VALUES
-('kk', 'ii');
+('1', '1');
 
 -- --------------------------------------------------------
 
@@ -61,7 +70,7 @@ CREATE TABLE `class_2` (
 --
 
 INSERT INTO `class_2` (`english`, `bengali`) VALUES
-('ll', 'ii');
+('2', '3');
 
 -- --------------------------------------------------------
 
@@ -75,6 +84,15 @@ CREATE TABLE `english_result` (
   `grade` varchar(20) NOT NULL,
   `teacher_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `english_result`
+--
+
+INSERT INTO `english_result` (`student_id`, `result`, `grade`, `teacher_id`) VALUES
+(22, 0, '', 1),
+(23, 0, '', 1),
+(24, 0, '', 2);
 
 -- --------------------------------------------------------
 
@@ -117,10 +135,19 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`id`, `name`, `guardian`, `mobile`, `address`, `class`) VALUES
-(1, 'g', 'hh', 98, 'ggg', 1),
-(2, 'ee', 'ww', 4545, 'eeee', 2),
-(3, 'ee', 'ww', 4545, 'eeee', 2),
-(4, 'n', 'h', 4555, 'dsddd', 2);
+(10, 'saiful619945', 'jijifj', 4848, 'fhughiu ijibgji', 1),
+(12, 'add', 'ijiji', 4848, '45gggg', 1),
+(14, 'huhu', 'dd', 4878, 'eeee', 1),
+(15, 'add', 'dd', 4878, 'eeee', 1),
+(16, 'add', 'dd', 4878, 'eeee', 1),
+(17, 'add', 'dd', 4878, 'eeee', 1),
+(18, 'add', 'dd', 4878, 'eeee', 1),
+(19, 'add', 'dd', 4878, 'eeee', 1),
+(20, 'add', 'dd', 4878, 'eeee', 1),
+(21, 'hiuhgu', 'ww', 4545, 'ijifj', 2),
+(22, 'hulu', 'iii', 789, 'hudfhu', 1),
+(23, 'hulu', 'iii', 789, 'hudfhu', 1),
+(24, 'dis', 'dixosji', 487, 'iughi', 2);
 
 -- --------------------------------------------------------
 
@@ -191,7 +218,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `teacher`
 --

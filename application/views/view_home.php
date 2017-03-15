@@ -6,40 +6,23 @@
         <link rel="stylesheet" href="http://localhost:8888/ci226/public/jquery/jquery-ui.min.css">
         <script src="http://localhost:8888/ci226/public/jquery/external/jquery/jquery.js"></script>
         <script src="http://localhost:8888/ci226/public/jquery/jquery-ui.min.js"></script>
-        <script>
-        $(function () {
-            $("#tabs").tabs();
-            $("#cl").on("change",function () {
-                $("#clr").empty();
-                var cl = $("#cl").val();
-                
-                $.get( "http://localhost:8888/ci226/home/getSubject",{cl:cl}, function( data ) {
-                    data.map(function  (e) {
-                        $("#clr").append(`<p>
-                            ${e["subject"]}
-                            <select value=${e["subject"]} class="teacher">
-                            <option disabled selected value> -- select an option -- </option>
-                            </select>
-                            </p>`)
-                    });
-                    $(".teacher").one("click",function (e) {
-                        $(".teacher").empty();
-                        $.get( "http://localhost:8888/ci226/home/getteacher", function( data ) {
-                            data.map(function  (e) {
-                                var id = e["id"];
-                                console.log(id);
-                                $(".teacher").append(`<option value=${id}>${e["name"]}  </option>`)
-                            });
-                        }, "json" );
-                    });
+         <script>
+         $(function  () {
+             $("#tabs").tabs();
+             $("#tabs-2").one("click",function () {
+                      
+             $.get( "http://localhost:8888/ci226/home/getteacher", function( data ) {
+                data.map(function  (e) {
+                    var id = e["id"];
+                    $(".teacher").append(`<option value=${id}>${e["name"]}  </option>`)
+                });
+            }, "json" );
 
-                }, "json" );
-            });
-            
-            
-
-        });
-        </script>
+         });
+         });
+          
+        
+         </script>
     </head>
     <body>
 
@@ -76,14 +59,31 @@
             <div id="tabs-2">
                 <form method="post">
                     <select name="class" id="cl">
-                        <option disabled selected value> -- select an option -- </option>
+                        <option disabled selected value> -- Select an Class -- </option>
 
                         <option value="class_1">Class one</option>
                         <option value="class_2">Class Two</option>
                         
                     </select>
+                    <br><br>
+                    <br><br>
                     <div id="clr">
+                        <label>English teacher</label>
+                        
+                        <select name="engTeacher" class="teacher">
+                            <option disabled selected value> -- select an option -- </option>
 
+                        </select>
+                        <br><br>
+                        <br><br>
+                        <label>Bengali teacher</label>
+                        
+                        <select name="benTeacher" class="teacher">
+                            <option disabled selected value> -- select an option -- </option>
+
+                        </select>
+                        <br><br>
+                        <br><br>
                     </div>
                     <br><br>
                     <br><br>
